@@ -1,0 +1,74 @@
+html,
+body {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: $Font-primary;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100vw;
+  margin: 0 auto;
+  @include phone {
+    width: 480px;
+  }
+  @include tablet {
+    width: 768px;
+  }
+  @include desktop {
+    width: 1280px;
+  }
+}
+.button {
+  max-height: 44px;
+  text-align: center;
+  border-radius: 25px;
+  border: none;
+  padding: 1em 2em;
+
+  &--white {
+    background-color: $color-white;
+    color: $color-main-theme;
+    &:hover,
+    &:focus {
+      background-color: $color-button-hover-secondary;
+      cursor: pointer;
+    }
+  }
+  &--main {
+    background-color: $color-main-theme;
+    color: $color-white;
+    &:hover,
+    &:focus {
+      background-color: $color-button-hover-main;
+      cursor: pointer;
+    }
+  }
+  &--circle {
+    background-color: $color-white;
+    color: $color-main-theme;
+    min-width: 16px;
+    min-height: 16px;
+    border-radius: 50%;
+    border: none;
+    &:hover,
+    &:focus {
+      background-color: $color-button-hover-secondary;
+      cursor: pointer;
+    }
+  }
+}

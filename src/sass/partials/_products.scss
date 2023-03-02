@@ -1,0 +1,432 @@
+.products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 121px 20px 160px 20px;
+  margin-bottom: 20px;
+
+  @include tablet {
+    padding: 122px 34px 80px 34px;
+  }
+  @include desktop {
+    padding: 127px 114px 119px 114px;
+  }
+  &__head {
+    margin-bottom: 152px;
+
+    @include desktop {
+      margin-bottom: 160px;
+    }
+  }
+  &__head-description {
+    font-family: $Font-secondary;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-secondary-theme;
+
+    @include tablet {
+      font-size: 26px;
+      line-height: 30px;
+    }
+
+    @include desktop {
+      font-size: 30px;
+      line-height: 34px;
+    }
+  }
+  &__head-title {
+    font-family: $Font-secondary;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 39px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $color-main-theme;
+
+    @include tablet {
+      font-size: 48px;
+      line-height: 55px;
+    }
+
+    @include desktop {
+      font-size: 58px;
+      line-height: 66px;
+    }
+  }
+  &__wrapper {
+    top: -260px;
+    left: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include tablet {
+      gap: 20px;
+      flex-direction: row;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+    @include desktop {
+      gap: 28px;
+    }
+  }
+  &__wrapper li:not(:first-child) {
+    margin-top: 150px;
+
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+  &__item {
+    position: relative;
+    top: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 480px;
+    border-radius: 24px;
+    padding: 0 40px;
+
+    @include tablet {
+      width: 220px;
+      padding: 0 10px;
+    }
+    @include desktop {
+      width: 329px;
+      padding: 0 44px;
+    }
+  }
+
+  &__item-caption {
+    margin-top: 168px;
+    margin-bottom: 54px;
+    font-family: $Font-secondary;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $color-white;
+    padding-left: 15px;
+  }
+  &__item-caption::after {
+    content: '...';
+    top: 30px;
+    right: 65px;
+    position: relative;
+  }
+  &__item-description {
+    font-family: $Font-primary;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: $color-white;
+    margin-bottom: 30px;
+  }
+  &__arrow {
+    transition-property: transform;
+    transition-duration: 1s;
+    margin-bottom: 40px;
+  }
+
+  &__arrow:hover {
+    transform: rotate(-90deg);
+    margin-bottom: 40px;
+  }
+
+  &__item--pink {
+    transition-property: padding-bottom, box-shadow;
+    transition-duration: 1s;
+    background: $color-secondary-theme;
+  }
+
+  &__item--pink:hover,
+  &__item--pink:focus,
+  &__iteam--pink:active {
+    padding-bottom: 130px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(to top, $color-menu-bg, transparent 30%);
+  }
+
+  &__item--pink::before {
+    position: absolute;
+    top: -117px;
+    width: 249px;
+    height: 252px;
+    content: '';
+    background-size: contain;
+    display: block;
+    background-image: url(/src/images/products/secondice-mob.png);
+  }
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .products__item--pink::before {
+      background-image: url(/src/images/products/secondice-mob-x2.png);
+    }
+  }
+
+  @media (min-device-pixel-ratio: 3), (min-resolution: 288dpi), (min-resolution: 3dppx) {
+    .products__item--pink::before {
+      background-image: url(/src/images/products/secondice-mob-x3.png);
+    }
+  }
+
+  @include tablet {
+    .products__item--pink::before {
+      background-image: url(/src/images/products/secondice-tab.png);
+    }
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      .products__item--pink::before {
+        background-image: url(/src/images/products/secondice-tab-x2.png);
+      }
+    }
+
+    @media (min-device-pixel-ratio: 3), (min-resolution: 288dpi), (min-resolution: 3dppx) {
+      .products__item--pink::before {
+        background-image: url(/src/images/products/secondice-tab-x3.png);
+      }
+    }
+  }
+
+  @include desktop {
+    .products__item--pink::before {
+      background-image: url(/src/images/products/secondice-desk.png);
+    }
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      .products__item--pink::before {
+        background-image: url(/src/images/products/secondice-desk-x2.png);
+      }
+    }
+
+    @media (min-device-pixel-ratio: 3), (min-resolution: 288dpi), (min-resolution: 3dppx) {
+      .products__item--pink::before {
+        background-image: url(/src/images/products/secondice-desk-x3.png);
+      }
+    }
+  }
+
+  &__item--coffee {
+    transition-property: padding-bottom, box-shadow;
+    transition-duration: 1s;
+    background: $color-coffee;
+  }
+
+  &__item--coffee:hover,
+  &__item--coffee:focus,
+  &__iteam--coffee:active {
+    padding-bottom: 130px;
+    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    background-image: linear-gradient(to top, #e7b56e, transparent 30%);
+  }
+
+  &__item--coffee::before {
+    position: absolute;
+    top: -117px;
+    width: 249px;
+    height: 252px;
+    content: '';
+    background-size: contain;
+    display: block;
+    background-image: url(/src/images/products/coffeemob.png);
+  }
+
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .products__item--coffee::before {
+      background-image: url(/src/images/products/coffeemob-x2.png);
+    }
+  }
+
+  @media (min-device-pixel-ratio: 3), (min-resolution: 288dpi), (min-resolution: 3dppx) {
+    .products__item--coffee::before {
+      background-image: url(/src/images/products/coffeemob-x3.png);
+    }
+  }
+
+  @include tablet {
+    .products__item--coffee::before {
+      background-image: url(/src/images/products/coffeetab.png);
+    }
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      .products__item--coffee::before {
+        background-image: url(/src/images/products/coffeetab-x2.png);
+      }
+    }
+
+    @media (min-device-pixel-ratio: 3), (min-resolution: 288dpi), (min-resolution: 3dppx) {
+      .products__item--coffee::before {
+        background-image: url(/src/images/products/coffeetab-x3.png);
+      }
+    }
+  }
+
+  @include desktop {
+    .products__item--coffee::before {
+      background-image: url(/src/images/products/coffeedesk.png);
+    }
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      .products__item--coffee::before {
+        background-image: url(/src/images/products/coffeedesk-x2.png);
+      }
+    }
+
+    @media (min-device-pixel-ratio: 3), (min-resolution: 288dpi), (min-resolution: 3dppx) {
+      .products__item--coffee::before {
+        background-image: url(/src/images/products/coffeedesk-x3.png);
+      }
+    }
+  }
+
+  &__item--shake {
+    transition-property: padding-bottom, box-shadow;
+    transition-duration: 1s;
+    background: $color-milkshake;
+  }
+
+  &__item--shake:hover,
+  &__item--shake:focus,
+  &__iteam--shake:active {
+    padding-bottom: 130px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(to top, #75a733, transparent 30%);
+  }
+
+  &__item--shake::before {
+    position: absolute;
+    top: -117px;
+    width: 249px;
+    height: 252px;
+    content: '';
+    background-size: contain;
+    display: block;
+    background-image: url(/src/images/products/shakemob.png);
+  }
+
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .products__item--shake::before {
+      background-image: url(/src/images/products/shakemob-x2.png);
+    }
+  }
+
+  @media (min-device-pixel-ratio: 3), (min-resolution: 288dpi), (min-resolution: 3dppx) {
+    .products__item--shake::before {
+      background-image: url(/src/images/products/shakemob-x3.png);
+    }
+  }
+
+  @include tablet {
+    .products__item--shake::before {
+      background-image: url(/src/images/products/shaketab.png);
+    }
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      .products__item--shake::before {
+        background-image: url(/src/images/products/shaketab-x2.png);
+      }
+    }
+
+    @media (min-device-pixel-ratio: 3), (min-resolution: 288dpi), (min-resolution: 3dppx) {
+      .products__item--shake::before {
+        background-image: url(/src/images/products/shaketab-x3.png);
+      }
+    }
+  }
+
+  @include desktop {
+    .products__item--shake::before {
+      background-image: url(/src/images/products/shakedesk.png);
+    }
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      .products__item--shake::before {
+        background-image: url(/src/images/products/shakedesk-x2.png);
+      }
+    }
+
+    @media (min-device-pixel-ratio: 3), (min-resolution: 288dpi), (min-resolution: 3dppx) {
+      .products__item--shake::before {
+        background-image: url(/src/images/products/shakedesk-x3.png);
+      }
+    }
+  }
+
+  /* ====== Hidden section ====== */
+
+  &__overlay {
+    pointer-events: none;
+    top: 470px;
+    position: absolute;
+    width: 100%;
+    padding: 10px 25px 0 25px;
+    border-radius: 24px;
+    color: $color-white;
+    text-align: center;
+    letter-spacing: 0.04em;
+    font-family: $Font-primary;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21px;
+  }
+
+  @include phone-max {
+    .products__overlay {
+      top: 500px;
+    }
+  }
+
+  &__overlay--coffee {
+    pointer-events: none;
+    top: 470px;
+    position: absolute;
+    width: 100%;
+    padding: 10px 25px 0 25px;
+    border-radius: 24px;
+    color: $color-white;
+    text-align: center;
+    letter-spacing: 0.04em;
+    font-family: $Font-primary;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21px;
+  }
+
+  @include phone-max {
+    .products__overlay--coffee {
+      top: 500px;
+    }
+  }
+
+  &__overlay--shake {
+    pointer-events: none;
+    top: 470px;
+    position: absolute;
+    width: 100%;
+    padding: 10px 25px 0 25px;
+    border-radius: 24px;
+    color: $color-white;
+    text-align: center;
+    letter-spacing: 0.04em;
+    font-family: $Font-primary;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21px;
+  }
+}
+
+@include phone-max {
+  .products__overlay--shake {
+    top: 500px;
+  }
+}
