@@ -1,0 +1,91 @@
+.menu-container {
+  background-color: $color-menu-bg;
+  padding-top: 60px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 995;
+  transform: translateX(100%);
+  transition: transform 250ms ease-in-out;
+  @include tablet {
+    width: 254px;
+    transform: translateX(100%);
+    @include desktop {
+      display: none;
+    }
+  }
+  &__btn-wrapper {
+    width: calc(100% - 21px);
+    margin: 0 auto;
+    @include tablet {
+      width: calc(100% - 34px);
+    }
+  }
+  &__btn {
+    width: calc(100% - 42px);
+    margin-left: 21px;
+    font-size: 5vw;
+    font-weight: 600;
+    align-self: center;
+    padding: 10px 32px;
+    @media screen and (min-width: 480px) {
+      font-size: 24px;
+    }
+    @include tablet {
+      width: 186px;
+      height: 44px;
+      margin-left: 37px;
+      font-size: 16px;
+    }
+  }
+  &__items {
+    margin-top: 5.9vw;
+  }
+  &__item {
+    display: block;
+    border-top: 1px solid $color-menu-border;
+    border-bottom: 1px solid $color-menu-border;
+    padding: 0.86em 0;
+  }
+  &__link {
+    color: $color-white;
+    font-weight: 700;
+    font-size: 4.375vw;
+    margin-left: 1.5em;
+    @include tablet {
+      font-size: 16px;
+    }
+    &:hover,
+    &:focus {
+      color: $color-main-theme;
+    }
+  }
+  &.is-open {
+    transform: translateX(0);
+  }
+}
+
+.menu-toggle {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  @include desktop {
+    display: none;
+  }
+  &__btn {
+    fill: $color-main-theme;
+    color: $color-main-theme;
+    margin-right: 30px;
+  }
+  &__btn-close {
+    color: $color-white;
+    position: absolute;
+    top: 23px;
+    right: 28px;
+    @include tablet {
+      right: 34px;
+    }
+  }
+}
